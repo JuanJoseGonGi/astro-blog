@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import '../styles/global.css';
 
 const pageTitle = "About Me";
 
@@ -21,19 +20,6 @@ const skillColor = "navy";
 const skillWeight = "bold";
 const skillCase = "uppercase";
 ---
-<style is:global define:vars={{skillColor, skillWeight, skillCase}}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
-  }
-
-  .skill {
-    color: var(--skillColor);
-    font-weight: var(--skillWeight);
-    text-transform: var(--skillCase);
-  }
-</style>
-
 <BaseLayout pageTitle={pageTitle}>
   <h2>... and my new Astro site!</h2>
 
@@ -60,3 +46,17 @@ const skillCase = "uppercase";
 
   {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 </BaseLayout>
+
+<style is:global define:vars={{skillColor, skillWeight, skillCase}}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--skillWeight);
+    text-transform: var(--skillCase);
+  }
+</style>
+
